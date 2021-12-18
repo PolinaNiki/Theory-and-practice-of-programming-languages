@@ -21,10 +21,10 @@ fun main(args: Array<String>) {
     var count_numb = 0
     if (!parts.isNullOrEmpty()){
         for (part in parts){
-            if (part in ops){ //если операция
+            if (part in ops){ 
                 stack_operand.add(part)
                 count_op++
-            }else { //если число
+            }else { 
                 if (isNumber(part)) {
                     count_numb++
                     stack.add(part.toDouble())
