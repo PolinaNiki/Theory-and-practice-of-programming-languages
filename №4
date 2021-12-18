@@ -1,0 +1,25 @@
+import random
+import math
+
+numbers = []
+a = False
+b = 0.0
+
+for i in range(10):
+    numbers.append(round(random.uniform(-100,100),3))
+    if(numbers[-1] - int(numbers[-1]) != 0):
+        a = True
+
+while(a == False):
+    numbers[-1] = round(random.uniform(-100,100),3)
+    if((numbers[-1] - int(numbers[-1])) != 0):
+        a = True
+
+for i in range(10):
+    for j in range(10):
+        if(math.fabs(numbers[i] - int(numbers[i])) < math.fabs(numbers[j] - int(numbers[j]))):
+            b = numbers[i]
+            numbers[i] = numbers[j]
+            numbers[j] = b
+
+print(numbers)
